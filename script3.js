@@ -4,25 +4,25 @@
 //El valor acumulado de los elementos del vector que sean mayores a 36.
 //Cantidad de valores mayores a 50.
 function ejercicio1() {
-    let vector = new Array(8);
-    let sumaTotal = 0;
-    let sumaMayores36 = 0;
-    let contadorMayores50 = 0;
-    for (let i = 0; i < vector.length; i++) {
-        vector[i] = parseInt(prompt(`Ingrese el valor del elemento ${i + 1}`)); 
-        sumaTotal += vector[i];
-        if (vector[i] > 36) {
-            sumaMayores36 += vector[i];
-        }
+  let vector = new Array(8);
+  let sumaTotal = 0;
+  let sumaMayores36 = 0;
+  let contadorMayores50 = 0;
+  for (let i = 0; i < vector.length; i++) {
+    vector[i] = parseInt(prompt(`Ingrese el valor del elemento ${i + 1}`));
+    sumaTotal += vector[i];
+    if (vector[i] > 36) {
+      sumaMayores36 += vector[i];
     }
-    for (let i = 0; i < vector.length; i++) {
-        if (vector[i] > 50) {
-            contadorMayores50++;
-        }
+  }
+  for (let i = 0; i < vector.length; i++) {
+    if (vector[i] > 50) {
+      contadorMayores50++;
     }
-    document.write("El valor acumulado de todos los elementos del vector es: " + sumaTotal + "<br>");
-    document.write("El valor acumulado de los elementos del vector que sean mayores a 36 es: " + sumaMayores36 + "<br>");
-    document.write("La cantidad de valores mayores a 50 es: " + contadorMayores50 + "<br>");
+  }
+  document.write("El valor acumulado de todos los elementos del vector es: " + sumaTotal + "<br>");
+  document.write("El valor acumulado de los elementos del vector que sean mayores a 36 es: " + sumaMayores36 + "<br>");
+  document.write("La cantidad de valores mayores a 50 es: " + contadorMayores50 + "<br>");
 }
 
 
@@ -441,10 +441,10 @@ function ejercicio4Select() {
   button.onclick = function () {
     alert(
       "Respuestas correctas: " +
-        correctas +
-        "\n" +
-        "Respuestas incorrectas: " +
-        incorrectas
+      correctas +
+      "\n" +
+      "Respuestas incorrectas: " +
+      incorrectas
     );
   };
 
@@ -550,13 +550,13 @@ function ejercicioTextarea() {
   button.onclick = function () {
     alert(
       "Nombre: " +
-        input1.value +
-        "\n" +
-        "Mail: " +
-        input2.value +
-        "\n" +
-        "Comentarios: " +
-        textarea.value
+      input1.value +
+      "\n" +
+      "Mail: " +
+      input2.value +
+      "\n" +
+      "Comentarios: " +
+      textarea.value
     );
   };
 
