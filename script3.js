@@ -3,7 +3,7 @@
 //El valor acumulado de todos los elementos del vector.
 //El valor acumulado de los elementos del vector que sean mayores a 36.
 //Cantidad de valores mayores a 50.
-function ejercicio1() {
+function ejercicio1(btn) {
   let vector = new Array(8);
   let sumaTotal = 0;
   let sumaMayores36 = 0;
@@ -20,16 +20,17 @@ function ejercicio1() {
       contadorMayores50++;
     }
   }
-  document.write("El valor acumulado de todos los elementos del vector es: " + sumaTotal + "<br>");
-  document.write("El valor acumulado de los elementos del vector que sean mayores a 36 es: " + sumaMayores36 + "<br>");
-  document.write("La cantidad de valores mayores a 50 es: " + contadorMayores50 + "<br>");
+  let mensaje = "El valor acumulado de todos los elementos del vector es: " + sumaTotal + "<br>" +
+    "El valor acumulado de los elementos del vector que sean mayores a 36 es: " + sumaMayores36 + "<br>" +
+    "La cantidad de valores mayores a 50 es: " + contadorMayores50 + "<br>";
+  mostrarResultado(btn, mensaje);
 }
 
 
 // Clase Array Ejercicio 2
 // Realizar un programa que pida la carga de dos vectores numéricos. Obtener la suma de los dos vectores, dicho resultado guardarlo en un tercer vector del mismo tamaño. Sumar componente a componente.
 // El tamaño del vector es a elección.
-function ejercicio2() {
+function ejercicio2(btn) {
   let size = parseInt(prompt("Ingrese el tamaño de los vectores: "));
   let vector1 = new Array(size);
   let vector2 = new Array(size);
@@ -40,30 +41,31 @@ function ejercicio2() {
     vector2[i] = parseInt(prompt("Ingrese el valor del segundo vector: "));
     vector3[i] = vector1[i] + vector2[i];
   }
-  document.write("El resultado de la suma de los dos vectores es: " + vector3);
+  let mensaje = "El resultado de la suma de los dos vectores es: " + vector3.join(", ");
+  mostrarResultado(btn, mensaje);
 }
 
 //Math Ejercicio 1
 //Confeccionar un programa que solicite el ingreso de un número y nos muestre dicho valor elevado a la tercera potencia.
-function ejercicio1Math() {
+function ejercicio1Math(btn) {
   let num = parseInt(prompt("Ingrese un número: "));
   let result = Math.pow(num, 3);
-  document.write(
-    "El resultado de " + num + " elevado a la tercera potencia es: " + result
-  );
+  let mensaje = "El resultado de " + num + " elevado a la tercera potencia es: " + result;
+  mostrarResultado(btn, mensaje);
 }
 
 //Math Ejercicio 2
 //Ingresar por teclado un valor y luego mostrar la raiz cuadrada de dicho valor.
-function ejercicio2Math() {
+function ejercicio2Math(btn) {
   let num = parseInt(prompt("Ingrese un número: "));
   let result = Math.sqrt(num);
-  document.write("La raíz cuadrada de " + num + " es: " + result);
+  let mensaje = "La raíz cuadrada de " + num + " es: " + result;
+  mostrarResultado(btn, mensaje);
 }
 
 //String Ejercicio 1
 //Ingresar una serie de nombres por teclado hasta que se cargue la palabra Fin, y mostrar cuántos nombres se ingresaron.
-function ejercicio1String() {
+function ejercicio1String(btn) {
   let names = [];
   let name;
   do {
@@ -72,11 +74,12 @@ function ejercicio1String() {
       names.push(name);
     }
   } while (name !== "Fin");
-  document.write("Se ingresaron " + names.length + " nombres.");
+  let mensaje = "Se ingresaron " + names.length + " nombres.";
+  mostrarResultado(btn, mensaje);
 }
 //String Ejercicio 2
 //Igual al anterior, pero que termine la aplicación sin contemplar mayúsculas ni minúsculas. Es decir que para salir se pueda teclear fin, Fin o FIN.
-function ejercicio2String() {
+function ejercicio2String(btn) {
   let names = [];
   let name;
   do {
@@ -85,40 +88,47 @@ function ejercicio2String() {
       names.push(name);
     }
   } while (name.toLowerCase() !== "fin");
-  document.write("Se ingresaron " + names.length + " nombres.");
+  let mensaje = "Se ingresaron " + names.length + " nombres.";
+  mostrarResultado(btn, mensaje);
 }
 //String Ejercicio 3
 //Realizar la búsqueda de un string clave en un string fuente. Se deberá ingresar una frase o texto (fuente) y luego la clave a buscar. En caso de encontrarla, imprimir la posición, de lo contrario una leyenda que indique que no está.
-function ejercicio3String() {
+function ejercicio3String(btn) {
   let source = prompt("Ingrese una frase o texto: ");
   let key = prompt("Ingrese la clave a buscar: ");
   let position = source.indexOf(key);
+  let mensaje;
   if (position !== -1) {
-    document.write("La clave se encuentra en la posición: " + position);
+    mensaje = "La clave se encuentra en la posición: " + position;
   } else {
-    document.write("La clave no se encuentra en el texto.");
+    mensaje = "La clave no se encuentra en el texto.";
   }
+  mostrarResultado(btn, mensaje);
 }
 //String Ejercicio 4
 //Ingresar una palabra o texto por teclado y determinar si es o no una palabra palíndromo. (Palabra que se lee de igual manera de adelante hacia atrás, que de atrás hacia delante)
-function ejercicio4String() {
+function ejercicio4String(btn) {
   let word = prompt("Ingrese una palabra o texto: ");
   let reversedWord = word.split("").reverse().join("");
+  let mensaje;
   if (word === reversedWord) {
-    document.write(word + " es un palíndromo.");
+    mensaje = word + " es un palíndromo.";
   } else {
-    document.write(word + " no es un palíndromo.");
+    mensaje = word + " no es un palíndromo.";
   }
+  mostrarResultado(btn, mensaje);
 }
 //String Ejercicio 5
 //Realizar un programa que permita cargar una dirección de mail e implementar una función que verifique si el String tiene cargado el carácter @.
-function ejercicio5String() {
+function ejercicio5String(btn) {
   let email = prompt("Ingrese una dirección de mail: ");
+  let mensaje;
   if (email.includes("@")) {
-    document.write(email + " es una dirección de mail válida.");
+    mensaje = email + " es una dirección de mail válida.";
   } else {
-    document.write(email + " no es una dirección de mail válida.");
+    mensaje = email + " no es una dirección de mail válida.";
   }
+  mostrarResultado(btn, mensaje);
 }
 //String Ejercicio 6
 //Cargar un String por teclado e implementar las siguientes funciones:
@@ -127,7 +137,7 @@ function ejercicio5String() {
 //c) Imprimirlo en forma inversa.
 //d) Imprimir cada carácter del String separado con un guión.
 //e) Imprimir la cantidad de vocales almacenadas.
-function ejercicio6String() {
+function ejercicio6String(btn) {
   let str = prompt("Ingrese un String: ");
   let half = Math.floor(str.length / 2);
   let lastChar = str.charAt(str.length - 1);
@@ -135,44 +145,43 @@ function ejercicio6String() {
   let separatedStr = str.split("").join("-");
   let vowelsCount = (str.match(/[aeiou]/gi) || []).length;
 
-  document.write(
-    "La primera mitad de los caracteres es: " + str.slice(0, half)
-  );
-  document.write("<br>");
-  document.write("El último carácter es: " + lastChar);
-  document.write("<br>");
-  document.write("El String en forma inversa es: " + reversedStr);
-  document.write("<br>");
-  document.write("El String separado por guiones es: " + separatedStr);
-  document.write("<br>");
-  document.write("La cantidad de vocales es: " + vowelsCount);
+  let mensaje = "La primera mitad de los caracteres es: " + str.slice(0, half) + "<br>" +
+    "El último carácter es: " + lastChar + "<br>" +
+    "El String en forma inversa es: " + reversedStr + "<br>" +
+    "El String separado por guiones es: " + separatedStr + "<br>" +
+    "La cantidad de vocales es: " + vowelsCount;
+  mostrarResultado(btn, mensaje);
 }
 //String Ejercicio 7
 //Codifique un programa que permita cargar una oración por teclado, luego mostrar cada palabra ingresada en una línea distinta.
-function ejercicio7String() {
+function ejercicio7String(btn) {
   let sentence = prompt("Ingrese una oración: ");
   let words = sentence.split(" ");
+  let mensaje = "Las palabras ingresadas son:<br>";
   for (let i = 0; i < words.length; i++) {
-    document.write(words[i] + "<br>");
+    mensaje += words[i] + "<br>";
   }
+  mostrarResultado(btn, mensaje);
 }
-//Formulario y Eventos Ejercicio
-//Crear un formulario con tres botones con las leyendas "1", "2" y "3". Mostrar un mensaje indicando qué botón se presionó.
-function ejercicioFormulario() {
+// Ejercicio Formularios y Eventos
+function ejercicioFormulario(btn) {
   let form = document.createElement("form");
   let button1 = document.createElement("button");
   button1.innerHTML = "1";
-  button1.onclick = function () {
+  button1.onclick = function (e) {
+    e.preventDefault();
     alert("Se presionó el botón 1");
   };
   let button2 = document.createElement("button");
   button2.innerHTML = "2";
-  button2.onclick = function () {
+  button2.onclick = function (e) {
+    e.preventDefault();
     alert("Se presionó el botón 2");
   };
   let button3 = document.createElement("button");
   button3.innerHTML = "3";
-  button3.onclick = function () {
+  button3.onclick = function (e) {
+    e.preventDefault();
     alert("Se presionó el botón 3");
   };
 
@@ -180,29 +189,34 @@ function ejercicioFormulario() {
   form.appendChild(button2);
   form.appendChild(button3);
 
-  document.body.appendChild(form);
+  agregarAlContenedor(btn, form);
 }
-//Controles FORM, BUTTON y TEXT Ejercicio 1
-//Crear un programa que permita cargar un entero en un text y al presionar un botón nos muestre dicho valor elevado al cubo (emplear la función alert).
-function ejercicio1Form() {
+
+// FORM, BUTTON y TEXT Ejercicio 1
+function ejercicio1Form(btn) {
+  let form = document.createElement("form");
   let input = document.createElement("input");
   input.type = "number";
   input.placeholder = "Ingrese un número";
 
   let button = document.createElement("button");
   button.innerHTML = "Calcular cubo";
-  button.onclick = function () {
+  button.onclick = function (e) {
+    e.preventDefault();
     let num = parseInt(input.value);
     let result = Math.pow(num, 3);
     alert("El resultado de " + num + " elevado al cubo es: " + result);
   };
 
-  document.body.appendChild(input);
-  document.body.appendChild(button);
+  form.appendChild(input);
+  form.appendChild(button);
+
+  agregarAlContenedor(btn, form);
 }
-//Controles FORM, BUTTON y TEXT Ejercicio 1
-//Cargar dos números en objetos de tipo text y al presionar un botón, mostrar el mayor.
-function ejercicio2Form() {
+
+// FORM, BUTTON y TEXT Ejercicio 2
+function ejercicio2Form(btn) {
+  let form = document.createElement("form");
   let input1 = document.createElement("input");
   input1.type = "number";
   input1.placeholder = "Ingrese el primer número";
@@ -213,20 +227,24 @@ function ejercicio2Form() {
 
   let button = document.createElement("button");
   button.innerHTML = "Mostrar mayor";
-  button.onclick = function () {
+  button.onclick = function (e) {
+    e.preventDefault();
     let num1 = parseInt(input1.value);
     let num2 = parseInt(input2.value);
     let mayor = Math.max(num1, num2);
     alert("El número mayor es: " + mayor);
   };
 
-  document.body.appendChild(input1);
-  document.body.appendChild(input2);
-  document.body.appendChild(button);
+  form.appendChild(input1);
+  form.appendChild(input2);
+  form.appendChild(button);
+
+  agregarAlContenedor(btn, form);
 }
-//Controles FORM, BUTTON y TEXT Ejercicio 3
-//Cargar un nombre y un apellido en sendos text. Al presionar un botón, concatenarlos y mostrarlos en un tercer text (Tener en cuenta que podemos modificar la propiedad value de un objeto TEXT cuando ocurre un evento)
-function ejercicio3Form() {
+
+// FORM, BUTTON y TEXT Ejercicio 3
+function ejercicio3Form(btn) {
+  let form = document.createElement("form");
   let input1 = document.createElement("input");
   input1.type = "text";
   input1.placeholder = "Ingrese su nombre";
@@ -237,19 +255,22 @@ function ejercicio3Form() {
 
   let button = document.createElement("button");
   button.innerHTML = "Mostrar nombre completo";
-  button.onclick = function () {
+  button.onclick = function (e) {
+    e.preventDefault();
     let nombreCompleto = input1.value + " " + input2.value;
     alert("El nombre completo es: " + nombreCompleto);
   };
 
-  document.body.appendChild(input1);
-  document.body.appendChild(input2);
-  document.body.appendChild(button);
+  form.appendChild(input1);
+  form.appendChild(input2);
+  form.appendChild(button);
+
+  agregarAlContenedor(btn, form);
 }
-//Control PASSWORD Ejercicio 1
-//Disponer dos campos de texto tipo password. Cuando se presione un botón mostrar si las dos claves ingresadas son iguales o no (es muy común solicitar al operador el ingreso de dos veces de su clave para validar si las escribió correctamente, esto se hace cuando se crea una password para el ingreso a un sitio o para el cambio de una existente).
-//Tener en cuenta que podemos emplear el operador == para ver si dos string son iguales.
-function ejercicioPassword() {
+
+// PASSWORD Ejercicio 1
+function ejercicioPassword(btn) {
+  let form = document.createElement("form");
   let input1 = document.createElement("input");
   input1.type = "password";
   input1.placeholder = "Ingrese su clave";
@@ -260,7 +281,8 @@ function ejercicioPassword() {
 
   let button = document.createElement("button");
   button.innerHTML = "Validar claves";
-  button.onclick = function () {
+  button.onclick = function (e) {
+    e.preventDefault();
     if (input1.value === input2.value) {
       alert("Las claves son iguales.");
     } else {
@@ -268,13 +290,16 @@ function ejercicioPassword() {
     }
   };
 
-  document.body.appendChild(input1);
-  document.body.appendChild(input2);
-  document.body.appendChild(button);
+  form.appendChild(input1);
+  form.appendChild(input2);
+  form.appendChild(button);
+
+  agregarAlContenedor(btn, form);
 }
-//Control SELECT Ejercicio 1
-//Confeccionar una página que muestre un objeto SELECT con distintos tipos de pizzas (Jamón y Queso, Muzzarella, Morrones). Al seleccionar una, mostrar en un objeto de tipo TEXT el precio de la misma.
-function ejercicio1Select() {
+
+// SELECT Ejercicio 1
+function ejercicio1Select(btn) {
+  let form = document.createElement("form");
   let select = document.createElement("select");
   let pizzas = [
     { name: "Jamón y Queso", price: 500 },
@@ -297,17 +322,15 @@ function ejercicio1Select() {
     input.value = "El precio de la pizza seleccionada es: " + select.value;
   };
 
-  document.body.appendChild(select);
-  document.body.appendChild(input);
+  form.appendChild(select);
+  form.appendChild(input);
+
+  agregarAlContenedor(btn, form);
 }
-//Control SELECT Ejercicio 2
-//Generar un presupuesto de un equipo de computación a partir de tres objetos de tipo SELECT que nos permiten seleccionar:
-//Procesador (Intel I3 - $400, Intel I5 $600, Intel I7 $800).
-//Monitor (Samsung 20' - $250, Samsung 22' - $350, Samsung 26' - $550)
-//Disco Duro(500 Gb - $300, 1 Tb - $440, 3 Tb - $500)
-//Para cada característica indicamos string a mostrar (Ej. Intel I3) y el valor asociado a dicho string (Ej. 400).
-//Al presionar un botón "Calcular" mostrar el presupuesto en un objeto de tipo TEXT.
-function ejercicio2Select() {
+
+// SELECT Ejercicio 2
+function ejercicio2Select(btn) {
+  let form = document.createElement("form");
   let select1 = document.createElement("select");
   let select2 = document.createElement("select");
   let select3 = document.createElement("select");
@@ -343,15 +366,33 @@ function ejercicio2Select() {
     option.text = monitores[i].name;
     select2.appendChild(option);
   }
+
+  for (let i = 0; i < discos.length; i++) {
+    let option = document.createElement("option");
+    option.value = discos[i].price;
+    option.text = discos[i].name;
+    select3.appendChild(option);
+  }
+
+  let button = document.createElement("button");
+  button.innerHTML = "Calcular";
+  button.onclick = function (e) {
+    e.preventDefault();
+    let total = parseInt(select1.value) + parseInt(select2.value) + parseInt(select3.value);
+    alert("El presupuesto total es: $" + total);
+  };
+
+  form.appendChild(select1);
+  form.appendChild(select2);
+  form.appendChild(select3);
+  form.appendChild(button);
+
+  agregarAlContenedor(btn, form);
 }
-//Control SELECT Ejercicio 3
-//Confeccionar una página que permita seleccionar una pizza y la cantidad de unidades. Luego al presionar un botón calcular el importe a pagar.
-//Utilizar un objeto de la clase SELECT para la selección de la pizza, pudiendo ser:
-//Queso: $ 4.
-//Jamón y queso: $ 6.
-//Especial: $ 10.
-//A la cantidad de pizzas cargarla en un objeto de la clase TEXT y en otro objeto de la clase TEXT mostrar el importe total a abonar.
-function ejercicio3Select() {
+
+// SELECT Ejercicio 3
+function ejercicio3Select(btn) {
+  let form = document.createElement("form");
   let select = document.createElement("select");
   let pizzas = [
     { name: "Queso", price: 4 },
@@ -372,20 +413,24 @@ function ejercicio3Select() {
 
   let button = document.createElement("button");
   button.innerHTML = "Calcular";
-  button.onclick = function () {
+  button.onclick = function (e) {
+    e.preventDefault();
     let cantidad = parseInt(input.value);
     let precioPizza = parseInt(select.value);
     let total = cantidad * precioPizza;
     alert("El importe total a abonar es: " + total);
   };
 
-  document.body.appendChild(select);
-  document.body.appendChild(input);
-  document.body.appendChild(button);
+  form.appendChild(select);
+  form.appendChild(input);
+  form.appendChild(button);
+
+  agregarAlContenedor(btn, form);
 }
-//Control SELECT Ejercicio 4
-//Confeccionar una página que permita tomar un examen múltiple choice. Se debe mostrar una pregunta y seguidamente un objeto SELECT con las respuestas posibles. Al presionar un botón mostrar la cantidad de respuestas correctas e incorrectas (Disponer 4 preguntas y sus respectivos controles SELECT)
-function ejercicio4Select() {
+
+// SELECT Ejercicio 4
+function ejercicio4Select(btn) {
+  let form = document.createElement("form");
   let preguntas = [
     {
       pregunta: "¿Cuál es la capital de Francia?",
@@ -409,8 +454,7 @@ function ejercicio4Select() {
     },
   ];
 
-  let correctas = 0;
-  let incorrectas = 0;
+  let selects = [];
 
   for (let i = 0; i < preguntas.length; i++) {
     let select = document.createElement("select");
@@ -424,21 +468,24 @@ function ejercicio4Select() {
       select.appendChild(option);
     }
 
-    select.onchange = function () {
-      if (parseInt(select.value) === preguntas[i].correcta) {
-        correctas++;
-      } else {
-        incorrectas++;
-      }
-    };
-
-    document.body.appendChild(pregunta);
-    document.body.appendChild(select);
+    selects.push({ select, correcta: preguntas[i].correcta });
+    form.appendChild(pregunta);
+    form.appendChild(select);
   }
 
   let button = document.createElement("button");
   button.innerHTML = "Calcular resultados";
-  button.onclick = function () {
+  button.onclick = function (e) {
+    e.preventDefault();
+    let correctas = 0;
+    let incorrectas = 0;
+    for (let i = 0; i < selects.length; i++) {
+      if (parseInt(selects[i].select.value) === selects[i].correcta) {
+        correctas++;
+      } else {
+        incorrectas++;
+      }
+    }
     alert(
       "Respuestas correctas: " +
       correctas +
@@ -448,15 +495,16 @@ function ejercicio4Select() {
     );
   };
 
-  document.body.appendChild(button);
+  form.appendChild(button);
+
+  agregarAlContenedor(btn, form);
 }
 
-//Control CHECKBOX Ejercicio 1
-//Confeccionar una página que muestre tres checkbox que permitan seleccionar los deportes que practica el usuario (Fútbol, Básket, Tenis) Mostrar al presionar un botón los deportes que eligió.
-function ejercicioCheckbox() {
+// CHECKBOX Ejercicio 1
+function ejercicioCheckbox(btn) {
+  let form = document.createElement("form");
   let deportes = ["Fútbol", "Básket", "Tenis"];
   let checkboxes = [];
-  let form = document.createElement("form");
 
   for (let i = 0; i < deportes.length; i++) {
     let checkbox = document.createElement("input");
@@ -476,7 +524,8 @@ function ejercicioCheckbox() {
 
   let button = document.createElement("button");
   button.innerHTML = "Mostrar deportes seleccionados";
-  button.onclick = function () {
+  button.onclick = function (e) {
+    e.preventDefault();
     let selectedSports = [];
     for (let i = 0; i < checkboxes.length; i++) {
       if (checkboxes[i].checked) {
@@ -487,11 +536,12 @@ function ejercicioCheckbox() {
   };
 
   form.appendChild(button);
-  document.body.appendChild(form);
+
+  agregarAlContenedor(btn, form);
 }
-//Control RADIO Ejercicio 1
-//Confeccionar una página que muestre dos objetos de la clase RADIO solicitando que seleccione si es mayor de 18 años o no. Al presionar un botón mostrar un alert indicando si puede ingresar al sitio o no.
-function ejercicioRadio() {
+
+// RADIO Ejercicio 1
+function ejercicioRadio(btn) {
   let form = document.createElement("form");
   let radio1 = document.createElement("input");
   radio1.type = "radio";
@@ -516,7 +566,8 @@ function ejercicioRadio() {
 
   let button = document.createElement("button");
   button.innerHTML = "Verificar edad";
-  button.onclick = function () {
+  button.onclick = function (e) {
+    e.preventDefault();
     if (radio1.checked) {
       alert("Puede ingresar al sitio.");
     } else if (radio2.checked) {
@@ -527,12 +578,12 @@ function ejercicioRadio() {
   };
 
   form.appendChild(button);
-  document.body.appendChild(form);
+
+  agregarAlContenedor(btn, form);
 }
 
-//Control TEXTAREA Ejercicio 1
-//Confeccionar una página de visitas a un sitio, solicitar ingresar el nombre de una persona, su mail y los comentarios (TEXTAREA). Mostrar luego llamando a la función alert los datos ingresados.
-function ejercicioTextarea() {
+// TEXTAREA Ejercicio 1
+function ejercicioTextarea(btn) {
   let form = document.createElement("form");
   let input1 = document.createElement("input");
   input1.type = "text";
@@ -547,7 +598,8 @@ function ejercicioTextarea() {
 
   let button = document.createElement("button");
   button.innerHTML = "Enviar";
-  button.onclick = function () {
+  button.onclick = function (e) {
+    e.preventDefault();
     alert(
       "Nombre: " +
       input1.value +
@@ -568,5 +620,26 @@ function ejercicioTextarea() {
   form.appendChild(document.createElement("br"));
   form.appendChild(button);
 
-  document.body.appendChild(form);
+  agregarAlContenedor(btn, form);
+}
+
+function mostrarResultado(btn, mensaje) {
+  // Busca el div.resultado más cercano al botón presionado
+  const contenedor = btn.parentElement.querySelector('.resultado');
+  if (contenedor) {
+    contenedor.innerHTML = mensaje;
+  } else {
+    alert(mensaje); // fallback
+  }
+}
+
+function agregarAlContenedor(btn, elemento) {
+  // Busca el div.resultado más cercano al botón presionado
+  const contenedor = btn && btn.parentElement ? btn.parentElement.querySelector('.resultado') : null;
+  if (contenedor) {
+    contenedor.innerHTML = "";
+    contenedor.appendChild(elemento);
+  } else {
+    document.body.appendChild(elemento); // fallback
+  }
 }

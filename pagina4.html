@@ -5,10 +5,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página 4 - Tutorial Javascript</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body onLoad="mostrarMensaje()">
+    <h1 style="text-align: center;">
+        Página 4 - Tutorial Javascript
+    </h1>
+    <nav>
+        <ul>
+            <li><a href="pagina3.html">Página 3</a></li>
+            <li><a href="pagina4.html">Página 4</a></li>
+        </ul>
+    </nav>
+
+    <div class="mainPageName">
+        <h2>Eventos onFocus y onBlur</h2>
+        <div class="mainExerciseName">
+            <h4>Contraseña</h4>
+            <input type="password" name="clave" id="clave">
+            <button onclick="validarClave()">Ejecutar</button>
+        </div>
+    </div>
+
+    <div class="mainPageName">
+        <h2>Eventos onMouseOver y onMouseOut</h2>
+        <div class="mainExerciseName">
+            <h4>Pasa el Cursor</h4>
+            <table style="border: 1;">
+                <tr>
+                    <td onMouseOver="cambiarColor(this,'#54daff')" onMouseOut="cambiarColor(this,'#ffffff')">
+                        <a href="http://www.outlook.com">Outlook</a>
+                    </td>
+                    <td onMouseOver="cambiarColor(this,'#410093')" onMouseOut="cambiarColor(this,'#ffffff')">
+                        <a href="http://www.yahoo.com">Yahoo</a>
+                    </td>
+                    <td onMouseOver="cambiarColor(this,'#c71610')" onMouseOut="cambiarColor(this,'#ffffff')">
+                        <a href="http://www.gmail.com">Gmail</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="mainPageName">
+        <h2>Eventos onLoad</h2>
+        <div class="mainExerciseName">
+            <h4>Ejercicio que sale al cargar la página</h4>
+        </div>
+    </div>
+
+    <div class="mainPageName">
+        <h2>El objeto window</h2>
+        <div class="mainExerciseName">
+            <h4>Abre Ventana</h4>
+            <button onclick="abrirVentana()">Ejecutar</button>
+        </div>
+    </div>
+
+    <div class="mainPageName">
+        <h2>Propiedad location del objeto window</h2>
+        <div class="mainExerciseName">
+            <h4>Redirecciones</h4>
+            <button onclick="redirigirWebmail()">Redireccionar a un servidor de mail</button>
+        </div>
+    </div>
+
+    <div class="mainPageName">
+        <h2>Propiedad screen del objeto window</h2>
+        <div class="mainExerciseName">
+            <h4>Abrir Ventana a Medias</h4>
+            <button onclick="abrirVentanaCompleta()">Ejecutar</button>
+        </div>
+    </div>
+
+    <div class="mainPageName">
+        <h2>Propiedad navigator del objeto window</h2>
+        <div class="mainExerciseName">
+            <h4>Cookies</h4>
+            <button onclick="verificarCookies()">Ejecutar</button>
+        </div>
+    </div>
+
+    <div class="mainPageName">
+        <h2>Programación orientada a objetos en JavaScript.</h2>
+        <div class="mainExerciseName">
+            <h4>POO</h4>
+            <button onclick="ejecutarPoo(this)">Ejecutar</button>
+            <div class="resultado"></div>
+        </div>
+    </div>
 
 </body>
+<script src="script4.js"></script>
 
 </html>

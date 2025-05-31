@@ -4,6 +4,8 @@ function validarClave() {
     var clave = document.getElementById("clave").value;
     if (clave.length < 7 || clave.length > 20) {
         alert("La clave debe tener entre 7 y 20 caracteres.");
+    } else {
+        alert("Clave válida.");
     }
 }
 //Eventos onMouseOver y onMouseOut
@@ -19,7 +21,7 @@ function mostrarMensaje() {
 //El objeto window
 //Confeccionar una página que permita abrir otra ventana cuando se presiona un botón. Dicha ventana debe tener como ancho 600 pixeles y alto 300 pixeles.
 function abrirVentana() {
-    window.open("https://www.ejemplo.com", "Nueva Ventana", "width=600,height=300");
+    window.open("https://www.google.com", "Nueva Ventana de Google", "width=600,height=300");
 }
 //Propiedad location del objeto window
 /*Confeccionar una página que tenga un botón. Cuando se presione dicho botón generar un valor aleatorio entre 0 y 2. Si se genera el 0 llamar al webmail de Outlook, si se genera un 1 llamar a gmail en caso de generarse un 2 llamar a yahoo.
@@ -51,7 +53,7 @@ function redirigirWebmail() {
 function abrirVentanaCompleta() {
     let ancho = screen.width;
     let alto = screen.height / 2;
-    window.open("https://www.ejemplo.com", "Ventana Completa", `width=${ancho},height=${alto}`);
+    window.open("https://www.google.com", "Nueva Ventana de Google", `width=${ancho},height=${alto}`);
 }
 //Propiedad navigator del objeto window
 //Una vez que se cargue la página mostrar un alert indicando si el navegador tiene activas las cookies.
@@ -82,10 +84,23 @@ function Suma(valor1, valor2) {
         return this.valor1 + this.valor2;
     }
 }
+function ejecutarPoo(btn) {
+    let suma1;
+    suma1 = new Suma(5, 10);
+    let mensaje;
+    mensaje = 'La suma de 5 y 10 es: ' + suma1.retornarResultado();
+    suma1.primerValor(70);
+    suma1.segundoValor(30);
+    mensaje += '<br>La suma de 70 y 30 es: ' + suma1.retornarResultado();
+    mostrarResultado(btn, mensaje);
+}
 
-let suma1;
-suma1 = new Suma(5, 10);
-document.write('La suma de 5 y 10 es:' + suma1.retornarResultado() + '<br>');
-suma1.primerValor(70);
-suma1.segundoValor(30);
-document.write('La suma de 70 y 30 es:' + suma1.retornarResultado() + '<br>');
+function mostrarResultado(btn, mensaje) {
+  // Busca el div.resultado más cercano al botón presionado
+  const contenedor = btn.parentElement.querySelector('.resultado');
+  if (contenedor) {
+    contenedor.innerHTML = mensaje;
+  } else {
+    alert(mensaje); // fallback
+  }
+}
